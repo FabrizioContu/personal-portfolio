@@ -1,3 +1,8 @@
+---
+import "@fontsource-variable/onest";
+import Header from "../components/Header.astro";
+---
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -8,6 +13,23 @@
     <title>Personal Portfolio Fabrizio</title>
   </head>
   <body>
+    <Header />
     <slot />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    font-family: "Onest variable", system-ui, sans-serif;
+  }
+  body {
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+</style>
