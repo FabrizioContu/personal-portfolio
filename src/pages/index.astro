@@ -1,7 +1,10 @@
 ---
 import Badge from "../components/Badge.astro";
 import Layout from "../layouts/Layout.astro";
-
+import GitHubIcon from "../components/icons/github.astro";
+import LinkedinIcon from "../components/icons/linkedin.astro";
+import MailIcon from "../components/icons/mail.astro";
+import SocialPill from "../components/SocialPill.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -9,16 +12,39 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <main>
     <section class="w-full lg:w-[740px] mx-auto py-44">
+      <img
+        class="rounded-full size-12 mb-5"
+        src="https://media.licdn.com/dms/image/v2/D4D03AQF4o1nMQn6bgg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725363670807?e=2147483647&v=beta&t=n_5LMbIveQskK0RyZC9utJMDw3yCPdRba4TJ8YIqUOA"
+        alt="Fabrizio photo"
+      />
       <h1 class="text-4xl text-white font-bold flex flex-row gap-x-4 pb-4">
-        Hey, soy Fabrizio <div class="flex pt-1 items-center">
+        Hey, soy Fabrizio <a
+          href="https://github.com/FabrizioContu"
+          target="_blank"
+          rel="noopener"
+          class="flex pt-1 items-center"
+        >
           <Badge>Listo para trabajar</Badge>
-        </div>
+        </a>
       </h1>
-      <h2 class="opacity-80 text-xl">
-        2 años de experiencia. Programador FrontEnd. De Barcelona. Especializado
-        en React.
+      <h2 class="opacity-80 text-2xl text-wrap">
+        2 años de experiencia. <span class="text-teal-400"
+          >Programador FrontEnd.</span
+        > De Barcelona. Especializado en React.
       </h2>
-      <ul></ul>
+      <nav class="flex gap-x-4 mt-8">
+        <SocialPill href="https://github.com/FabrizioContu">
+          <GitHubIcon />Github
+        </SocialPill>
+        <SocialPill
+          href="https://www.linkedin.com/in/fabrizio-contu-9b179b12a/"
+        >
+          <LinkedinIcon />Linkedin
+        </SocialPill>
+        <SocialPill>
+          <MailIcon /> fab.contu@gmail.com
+        </SocialPill>
+      </nav>
     </section>
   </main>
 </Layout>
