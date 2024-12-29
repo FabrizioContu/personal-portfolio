@@ -1,23 +1,30 @@
 ---
 import Badge from "../components/Badge.astro";
 import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import GitHubIcon from "../components/icons/github.astro";
 import LinkedinIcon from "../components/icons/linkedin.astro";
 import MailIcon from "../components/icons/mail.astro";
 import SocialPill from "../components/SocialPill.astro";
+import CodeIcon from "../components/icons/code.astro";
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-  <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
+<Layout
+  title=" Porfolio de Fabrizio Contu - Programador y Desarrollador FrontEnd"
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-24" id="top">
       <img
-        class="rounded-full size-12 mb-5"
+        class="rounded-full size-16 mb-5"
         src="https://media.licdn.com/dms/image/v2/D4D03AQF4o1nMQn6bgg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725363670807?e=2147483647&v=beta&t=n_5LMbIveQskK0RyZC9utJMDw3yCPdRba4TJ8YIqUOA"
-        alt="Fabrizio photo"
+        alt="Foto de perfil de Fabrizio Contu"
       />
-      <h1 class="text-4xl text-white font-bold flex flex-row gap-x-4 pb-4">
+      <h1
+        class="text-2xl md:text-3xl lg:text-4xl text-white font-bold flex flex-row gap-x-4 pb-4"
+      >
         Hey, soy Fabrizio <a
           href="https://github.com/FabrizioContu"
           target="_blank"
@@ -32,7 +39,7 @@ import SocialPill from "../components/SocialPill.astro";
           >Programador FrontEnd.</span
         > De Barcelona. Especializado en React.
       </h2>
-      <nav class="flex gap-x-4 mt-8">
+      <nav class="flex flex-wrap gap-y-5 gap-x-6 mt-8">
         <SocialPill href="https://github.com/FabrizioContu">
           <GitHubIcon />Github
         </SocialPill>
@@ -45,6 +52,12 @@ import SocialPill from "../components/SocialPill.astro";
           <MailIcon /> fab.contu@gmail.com
         </SocialPill>
       </nav>
-    </section>
+    </SectionContainer>
+    <SectionContainer id="proyectos"
+      ><h2 class="text-2xl font-semibold md-6 flex gap-x-3 items-center">
+        <CodeIcon /> Proyectos
+      </h2>
+    </SectionContainer>
+    <SectionContainer id="sobre-mi"> s </SectionContainer>
   </main>
 </Layout>
