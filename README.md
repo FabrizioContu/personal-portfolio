@@ -1,3 +1,4 @@
 Bienvenido a mi portfolio personal
 
-(https://github.com/user-attachments/assets/b14878e2-7694-4fa1-96e0-c9ae7c593ae8)
+
+![Captura de pantalla 2025-01-16 135948](https://github.com/user-attachments/assets/f08d10a2-9b82-40aa-aa99-4b5908e99b20)
