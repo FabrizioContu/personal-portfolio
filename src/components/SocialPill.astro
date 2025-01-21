@@ -1,8 +1,9 @@
 <a
-  class="rounded-full text-sm border border-white flex justify-center items-center gap-x-2 py-1 px-3 bg-black/10 hover:scale-110 hover:bg-teal-800/80 transition"
+  {...Astro.props}
   target="_blank"
-  rel="noopener"
-  href={Astro.props.href}
+  rel="noopener noreferrer"
+  role="link"
+  class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-teal-600 focus-visible:ring-offset active:bg-black"
 >
   <slot />
 </a>

@@ -1,0 +1,123 @@
+---
+import ReactIcon from "./icons/react.astro";
+import TailwindIcon from "./icons/tailwind.astro";
+import TypescriptIcon from "./icons/typescript.astro";
+import GithubIcon from "./icons/github.astro";
+import Link from "./icons/link.astro";
+import LinkButton from "./LinkButton.astro";
+import HtmlIcon from "./icons/html.astro";
+import BootstrapIcon from "./icons/bootstrap.astro";
+
+const TAGS = {
+  REACT: {
+    name: "React.js",
+    class: "bg-black text-[#32e0f4]",
+    icon: ReactIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#1976D2] text-white",
+    icon: TypescriptIcon,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#8A2BE2] text-white",
+    icon: BootstrapIcon,
+  },
+  HTML: {
+    name: "HTML5",
+    class: "bg-[#ff5733] text-white",
+    icon: HtmlIcon,
+  },
+};
+const PROJECTS = [
+  {
+    title: "La Igualitaria - Website",
+    description:
+      "Creación de una página web para una Cooperativa de Barcelona.",
+    link: "https://laigualitaria.vercel.app/",
+    github: "https://github.com/FabrizioContu/SPRINT9",
+    image: "/projects/laIgualitaria.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
+  },
+  {
+    title: "Star Wars",
+    description:
+      "Aplicación web con Registro y Login. Consumo y visualización de los datos de una API externa",
+    link: "https://sprint-7-fabco.vercel.app/",
+    github: "https://github.com/FabrizioContu/STAR-WARS",
+    image: "/projects/starWars.webp",
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
+  {
+    title: "Studio Slow4 - Website",
+    description: "Prototipo Website creado integralmente con Html y Bootstrap",
+    link: "https://678bb070733ca481fbf8392f--tiny-stroopwafel-34e9e2.netlify.app/",
+    github: "",
+    image: "/projects/studioSlow4.webp",
+    tags: [TAGS.HTML, TAGS.BOOTSTRAP],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex rounded-md bg-white/80 p-3 dark:bg-gray-800/50 shadow-sm flex-col-reverse space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt=""
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-semibold text-teal-500  dark:text-teal-400">
+            {title}
+          </h3>
+          <div class="flex flex-wrap my-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex justify-center items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GithubIcon class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
