@@ -2,6 +2,7 @@
 import Badge from "../components/Badge.astro";
 import Layout from "../layouts/Layout.astro";
 import SectionContainer from "../components/SectionContainer.astro";
+import ContactForm from "../components/ContactForm.astro";
 import Projects from "../components/Projects.astro";
 import AboutMe from "../components/AboutMe.astro";
 import GitHubIcon from "../components/icons/github.astro";
@@ -20,7 +21,7 @@ import AboutIcon from "../components/icons/about.astro";
   title=" Porfolio de Fabrizio Contu - Programador y Desarrollador FrontEnd"
 >
   <main class="px-4">
-    <SectionContainer id="top" class="py-16 md:py-36">
+    <SectionContainer id="top" aria-label="top" class="py-16 md:py-36">
       <img
         class="rounded-full size-20 mb-5 mt-24 dark:border-2 dark:border-teal-400"
         src="https://media.licdn.com/dms/image/v2/D4D03AQF4o1nMQn6bgg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725363670807?e=2147483647&v=beta&t=n_5LMbIveQskK0RyZC9utJMDw3yCPdRba4TJ8YIqUOA"
@@ -29,7 +30,7 @@ import AboutIcon from "../components/icons/about.astro";
       <h1
         class="text-2xl md:text-3xl lg:text-4xl dark:text-white font-bold flex flex-row gap-x-4 pb-4"
       >
-        Hola, soy Fabrizio <a
+        Ciao, soy Fabrizio <a
           href="https://github.com/FabrizioContu"
           target="_blank"
           rel="noopener"
@@ -39,11 +40,15 @@ import AboutIcon from "../components/icons/about.astro";
         </a>
       </h1>
       <h2 class="opacity-80 text-xl md:text-2xl text-wrap">
-        2 años de experiencia. <span
+        Un <span class="text-teal-600 dark:text-teal-400 font-semibold"
+          >programador FrontEnd</span
+        > italiano residente en Barcelona. Actualmente trabajo con <span
           class="text-teal-600 dark:text-teal-400 font-semibold"
-          >Programador FrontEnd</span
-        > de Barcelona. Especializado en React.
+        >
+          React</span
+        >.
       </h2>
+
       <nav class="flex flex-wrap gap-y-5 gap-x-6 mt-8">
         <SocialPill href="https://github.com/FabrizioContu">
           <GitHubIcon />
@@ -99,7 +104,7 @@ import AboutIcon from "../components/icons/about.astro";
           <div class="flex-1">
             <strong class="block font-medium text-gray-900">
               Correo <span
-                class="text-teal-600 dark:text-teal-400 font-semibold"
+                class="text-teal-600 dark:text-teal-500 font-semibold"
                 >fab.contu@gmail.com
               </span>copiado
             </strong>
@@ -128,13 +133,16 @@ import AboutIcon from "../components/icons/about.astro";
         </div>
       </div>
     </SectionContainer>
-    <SectionContainer id="proyectos">
+    <SectionContainer id="proyectos" aria-label="proyectos">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         <CodeIcon class="size-7" /> Proyectos
       </h2>
       <Projects />
     </SectionContainer>
-    <SectionContainer id="sobre-mi">
+    <SectionContainer id="contacto" arial-label="contacto">
+      <ContactForm />
+    </SectionContainer>
+    <SectionContainer id="sobre-mi" aria-label="sobre-mi">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         <AboutIcon class="size-7" /> Sobre mí
       </h2>
