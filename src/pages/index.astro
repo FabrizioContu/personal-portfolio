@@ -12,6 +12,7 @@ import SocialPill from "../components/SocialPill.astro";
 import CodeIcon from "../components/icons/code.astro";
 import CopyIcon from "../components/icons/copy.astro";
 import AboutIcon from "../components/icons/about.astro";
+import Profile from "../assets/Profile_.png";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -23,8 +24,8 @@ import AboutIcon from "../components/icons/about.astro";
   <main class="px-4">
     <SectionContainer id="top" aria-label="top" class="py-16 md:py-36">
       <img
-        class="rounded-full size-20 mb-5 mt-24 dark:border-2 dark:border-teal-400"
-        src="https://media.licdn.com/dms/image/v2/D4D03AQF4o1nMQn6bgg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725363670807?e=2147483647&v=beta&t=n_5LMbIveQskK0RyZC9utJMDw3yCPdRba4TJ8YIqUOA"
+        class="rounded-full size-20 mb-5 mt-24 border-2 border-teal-400"
+        src={Profile.src}
         alt="Foto de perfil de Fabrizio Contu"
       />
       <h1
