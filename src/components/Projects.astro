@@ -1,5 +1,7 @@
 ---
 import ReactIcon from "./icons/react.astro";
+import NextjsIcon from "./icons/nextjs.astro";
+import WordpressIcon from "./icons/wordpress.astro";
 import TailwindIcon from "./icons/tailwind.astro";
 import TypescriptIcon from "./icons/typescript.astro";
 import GithubIcon from "./icons/github.astro";
@@ -40,16 +42,35 @@ const TAGS = {
     class: "bg-[#101011] text-white",
     icon: AstroIcon,
   },
+  NEXTJS: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextjsIcon,
+  },
+  WORDPRESS: {
+    name: "WordPress",
+    class: "bg-[#21759b] text-white",
+    icon: WordpressIcon,
+  },
 };
 const PROJECTS = [
+  {
+    title: "Poolift",
+    description:
+      "Aplicación web para organizar regalos de cumpleaños en grupo.",
+    link: "https://poolift.vercel.app/",
+    github: "https://github.com/FabrizioContu/poolift",
+    image: "/projects/poolift.webp",
+    tags: [TAGS.NEXTJS, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
   {
     title: "La Igualitaria",
     description:
       "Creación de una página web para una Cooperativa de Barcelona.",
     link: "https://igualitaria-nextjs.vercel.app/",
-    github: "https://github.com/FabrizioContu/SPRINT9",
+    github: "https://github.com/FabrizioContu/igualitaria-nextjs",
     image: "/projects/igualitaria.webp",
-    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.ASTRO],
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.WORDPRESS],
   },
   {
     title: "Hir3d",
