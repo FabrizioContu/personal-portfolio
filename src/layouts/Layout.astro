@@ -2,34 +2,30 @@
 import "@fontsource-variable/onest";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-const { title } = Astro.props;
+import type { Lang } from "../i18n/utils";
+
+interface Props {
+  title: string;
+  lang: Lang;
+}
+
+const { title, lang } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>
-      {title}
-    </title>
-    <!-- HTML Meta Tags -->
-    <title>
-      Porfolio de Fabrizio Contu - Programador y Desarrollador FrontEnd
-    </title>
+    <title>{title}</title>
     <meta name="description" content="" />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://fabriziocontudev.netlify.app/" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="
-  Porfolio de Fabrizio Contu - Programador y Desarrollador FrontEnd
-"
-    />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content="" />
     <meta property="og:image" content="" />
 
@@ -40,16 +36,9 @@ const { title } = Astro.props;
       property="twitter:url"
       content="https://fabriziocontudev.netlify.app/"
     />
-    <meta
-      name="twitter:title"
-      content="
-  Porfolio de Fabrizio Contu - Programador y Desarrollador FrontEnd
-"
-    />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="" />
-
-    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
   </head>
   <body class="relative text-black dark:text-white">
     <div
@@ -59,10 +48,10 @@ const { title } = Astro.props;
     >
     </div>
 
-    <Header />
+    <Header lang={lang} />
 
     <slot />
-    <Footer />
+    <Footer lang={lang} />
   </body>
 
   <style is:global>

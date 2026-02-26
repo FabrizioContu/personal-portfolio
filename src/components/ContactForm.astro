@@ -1,5 +1,13 @@
 ---
 import SocialPill from "./SocialPill.astro";
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <div>
@@ -9,17 +17,19 @@ import SocialPill from "./SocialPill.astro";
         <h1
           class="text-lg sm:text-2xl md:text-3xl lg:text-4xl dark:text-white font-bold flex flex-row"
         >
-          ¿Tienes algún un proyecto?
+          {t.contact.hasProject}
         </h1>
-        <p class="dark:text-white text-sm md:text-lg ps-2">Trabajemos juntos</p>
+        <p class="dark:text-white text-sm md:text-lg ps-2">
+          {t.contact.letWork}
+        </p>
       </div>
 
       <SocialPill
         href="mailto:fab.contu@gmail.com"
         class="ml-4 px-4 py-2 text-white bg-teal-500 rounded-lg shadow hover:bg-teal-600 dark:hover:bg-teal-400 transition"
-        aria-label="contactar"
+        aria-label={t.contact.ariaLabel}
       >
-        ¡Contáctame!
+        {t.contact.contactMe}
       </SocialPill>
     </div>
   </div>

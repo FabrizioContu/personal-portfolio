@@ -1,21 +1,30 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const alternateLang = lang === "en" ? "es" : "en";
 
 const navItems = [
   {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
+    title: t.nav.projects,
+    label: "projects",
+    url: "#projects",
   },
   {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
+    title: t.nav.aboutMe,
+    label: "about",
+    url: "#about",
   },
   {
-    title: "Contacto",
-    label: "contacto",
-    url: "/#contacto",
+    title: t.nav.contact,
+    label: "contact",
+    url: "#contact",
   },
 ];
 ---
@@ -38,6 +47,13 @@ const navItems = [
         </a>
       ))
     }
+    <a
+      href={`/${alternateLang}/`}
+      class="relative block px-2 py-2 transition hover:text-teal-400 dark:hover:text-teal-400 font-semibold"
+      aria-label={`Switch to ${alternateLang === "en" ? "English" : "Spanish"}`}
+    >
+      {alternateLang.toUpperCase()}
+    </a>
     <ThemeToggle />
   </nav>
 </header>

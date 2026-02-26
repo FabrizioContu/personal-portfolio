@@ -10,6 +10,14 @@ import LinkButton from "./LinkButton.astro";
 import HtmlIcon from "./icons/html.astro";
 import BootstrapIcon from "./icons/bootstrap.astro";
 import AstroIcon from "./icons/astro.astro";
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 
 const TAGS = {
   REACT: {
@@ -53,11 +61,11 @@ const TAGS = {
     icon: WordpressIcon,
   },
 };
+
 const PROJECTS = [
   {
     title: "Poolift",
-    description:
-      "Aplicación web para organizar regalos de cumpleaños en grupo.",
+    description: t.projects.poolift,
     link: "https://poolift.vercel.app/",
     github: "https://github.com/FabrizioContu/poolift",
     image: "/projects/poolift.webp",
@@ -65,8 +73,7 @@ const PROJECTS = [
   },
   {
     title: "La Igualitaria",
-    description:
-      "Creación de una página web para una Cooperativa de Barcelona.",
+    description: t.projects.igualitaria,
     link: "https://igualitaria-nextjs.vercel.app/",
     github: "https://github.com/FabrizioContu/igualitaria-nextjs",
     image: "/projects/igualitaria.webp",
@@ -74,7 +81,7 @@ const PROJECTS = [
   },
   {
     title: "Hir3d",
-    description: "Creación de un simulador de entrevistas con IA.",
+    description: t.projects.hir3d,
     link: "https://hir3d.netlify.app/",
     github: "https://github.com/FabrizioContu/HIR3D",
     image: "/projects/hir3d.webp",
@@ -82,8 +89,7 @@ const PROJECTS = [
   },
   {
     title: "Comunidad Solar Poble Sec",
-    description:
-      "Desarrollo de una interfaz web para un simulador de energía solar",
+    description: t.projects.comunidadSolar,
     link: "https://comunidadenergeticapoblesec.netlify.app/",
     github: "https://github.com/FabrizioContu/ComunidadPobleSec",
     image: "/projects/comunidadSolar.webp",
@@ -91,8 +97,7 @@ const PROJECTS = [
   },
   {
     title: "Star Wars",
-    description:
-      "Aplicación web con Registro y Login. Consumo y visualización de los datos de una API externa",
+    description: t.projects.starWars,
     link: "https://sprint-7-fabco.vercel.app/",
     github: "https://github.com/FabrizioContu/STAR-WARS",
     image: "/projects/starWars.webp",
@@ -100,7 +105,7 @@ const PROJECTS = [
   },
   {
     title: "Studio Slow4",
-    description: "Prototipo Website creado integralmente con Html y Bootstrap",
+    description: t.projects.studioSlow4,
     link: "https://678bb070733ca481fbf8392f--tiny-stroopwafel-34e9e2.netlify.app/",
     github: "",
     image: "/projects/studioSlow4.webp",
@@ -149,13 +154,13 @@ const PROJECTS = [
               {github && (
                 <LinkButton href={github}>
                   <GithubIcon class="size-6" />
-                  Ver codigo
+                  {t.projects.viewCode}
                 </LinkButton>
               )}
               {link && (
                 <LinkButton href={link}>
                   <Link class="size-4" />
-                  Ir a sitio web
+                  {t.projects.visitSite}
                 </LinkButton>
               )}
             </footer>

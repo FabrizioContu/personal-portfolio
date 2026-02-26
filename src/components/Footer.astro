@@ -1,4 +1,12 @@
 ---
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 ---
 
@@ -11,17 +19,20 @@ const currentYear = new Date().getFullYear();
     <span class="text-sm sm:text-center text-teal-600 dark:text-teal-400">
       {currentYear}
       <a href="https://porfolio.dev/" class="hover:underline"
-        >Inspirado en Midudev</a
+        >{t.footer.inspired}</a
       >
     </span>
     <ul
       class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-gray-200 sm:mt-0"
     >
       <li>
-        <a href="#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mi</a>
+        <a href="#about" class="hover:underline me-4 md:me-6"
+          >{t.footer.aboutMe}</a
+        >
       </li>
       <li>
-        <a href="mailto:fab.contu@gmail.com" class="hover:underline">Contacto</a
+        <a href="mailto:fab.contu@gmail.com" class="hover:underline"
+          >{t.footer.contact}</a
         >
       </li>
     </ul>
