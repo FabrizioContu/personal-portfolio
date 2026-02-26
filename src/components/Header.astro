@@ -47,14 +47,15 @@ const navItems = [
         </a>
       ))
     }
+
+    <ThemeToggle />
     <a
       href={`/${alternateLang}/`}
-      class="relative block px-2 py-2 transition hover:text-teal-400 dark:hover:text-teal-400 font-semibold"
+      class="relative block px-3 py-2 transition hover:text-teal-400 dark:hover:text-teal-400 font-semibold"
       aria-label={`Switch to ${alternateLang === "en" ? "English" : "Spanish"}`}
     >
       {alternateLang.toUpperCase()}
     </a>
-    <ThemeToggle />
   </nav>
 </header>
 
