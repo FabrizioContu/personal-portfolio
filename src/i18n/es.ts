@@ -16,6 +16,7 @@ export const es: Translations = {
       'Un <span class="text-teal-600 dark:text-teal-400 font-semibold">programador FrontEnd</span> italiano residente en Barcelona. Actualmente trabajo con <span class="text-teal-600 dark:text-teal-400 font-semibold">React</span>.',
     copyTitle: "Copiar fab.contu@gmail.com",
     copyAriaLabel: "Copiar correo electrónico",
+    cvFile: "CV_ES.pdf",
     downloadCV: "Descargar CV",
     downloadAriaLabel: "Descargar CV",
     emailCopiedLabel: "Correo",
