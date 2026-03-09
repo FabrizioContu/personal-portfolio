@@ -14,7 +14,7 @@ export const en = {
       'An Italian <span class="text-teal-600 dark:text-teal-400 font-semibold">FrontEnd developer</span> based in Barcelona. Currently working with <span class="text-teal-600 dark:text-teal-400 font-semibold">React</span>.',
     copyTitle: "Copy fab.contu@gmail.com",
     copyAriaLabel: "Copy email address",
-    cvFile: "CV.pdf",
+    cvFile: "CV_EN.pdf",
     downloadCV: "Download CV",
     downloadAriaLabel: "Download CV",
     emailCopiedLabel: "Email",
