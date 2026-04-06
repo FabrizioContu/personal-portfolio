@@ -40,7 +40,7 @@ export const es: Translations = {
     acargo:
       "Newsletter para cuidadores familiares con guías prácticas sobre ayudas públicas, herramientas útiles y bienestar del cuidador.",
     libriInGiro:
-      "Plataforma de intercambio de libros para la comunidad italiana en Barcelona. Explorá y pedí libros prestados por barrio.",
+      "Plataforma de intercambio de libros para la comunidad italiana en Barcelona. Explora y pides libros prestados por barrio.",
   },
   about: {
     p1Html:
