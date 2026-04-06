@@ -35,6 +35,10 @@ export const en = {
     starWars:
       "Web app with Register and Login. Fetching and displaying data from an external API.",
     studioSlow4: "Website prototype created entirely with HTML and Bootstrap.",
+    acargo:
+      "Newsletter for family caregivers with practical guides on public assistance, useful tools, and caregiver wellness.",
+    libriInGiro:
+      "Book-sharing platform for the Italian community in Barcelona. Browse and borrow books by neighbourhood.",
   },
   about: {
     p1Html:

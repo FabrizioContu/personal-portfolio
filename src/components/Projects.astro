@@ -10,6 +10,7 @@ import LinkButton from "./LinkButton.astro";
 import HtmlIcon from "./icons/html.astro";
 import BootstrapIcon from "./icons/bootstrap.astro";
 import AstroIcon from "./icons/astro.astro";
+import PhpIcon from "./icons/php.astro";
 import { useTranslations, type Lang } from "../i18n/utils";
 
 interface Props {
@@ -59,6 +60,11 @@ const TAGS = {
     name: "WordPress",
     class: "bg-[#21759b] text-white",
     icon: WordpressIcon,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#4F5B93] text-white",
+    icon: PhpIcon,
   },
 };
 
@@ -110,6 +116,22 @@ const PROJECTS = [
     github: "",
     image: "/projects/studioSlow4.webp",
     tags: [TAGS.HTML, TAGS.BOOTSTRAP],
+  },
+  {
+    title: "Acargo",
+    description: t.projects.acargo,
+    link: "https://acargo.org/",
+    github: "https://github.com/FabrizioContu/acargo",
+    image: "/projects/acargo.webp",
+    tags: [TAGS.PHP, TAGS.HTML],
+  },
+  {
+    title: "Libri in Giro BCN",
+    description: t.projects.libriInGiro,
+    link: "https://libri-in-giro-bcn.vercel.app/",
+    github: "https://github.com/FabrizioContu/libri-in-giro-bcn",
+    image: "/projects/libriInGiro.webp",
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND],
   },
 ];
 ---
