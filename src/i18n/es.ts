@@ -31,16 +31,17 @@ export const es: Translations = {
     visitSite: "Ir a sitio web",
     poolift: "Aplicación web para organizar regalos de cumpleaños en grupo.",
     igualitaria: "Creación de una página web para una Cooperativa de Barcelona.",
+      acargo:
+      "Newsletter para cuidadores familiares con guías prácticas sobre ayudas públicas, herramientas útiles y bienestar del cuidador.",
+    libriInGiro:
+      "Plataforma de intercambio de libros para la comunidad italiana en Barcelona. Explora y pides libros prestados por barrio.",
     hir3d: "Creación de un simulador de entrevistas con IA.",
     comunidadSolar:
       "Desarrollo de una interfaz web para un simulador de energía solar.",
     starWars:
       "Aplicación web con Registro y Login. Consumo y visualización de los datos de una API externa.",
     studioSlow4: "Prototipo Website creado integralmente con Html y Bootstrap.",
-    acargo:
-      "Newsletter para cuidadores familiares con guías prácticas sobre ayudas públicas, herramientas útiles y bienestar del cuidador.",
-    libriInGiro:
-      "Plataforma de intercambio de libros para la comunidad italiana en Barcelona. Explora y pides libros prestados por barrio.",
+  
   },
   about: {
     p1Html:

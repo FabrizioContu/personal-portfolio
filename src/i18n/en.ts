@@ -29,16 +29,17 @@ export const en = {
     visitSite: "Go to website",
     poolift: "Web app for organizing group birthday gifts.",
     igualitaria: "Creation of a website for a Barcelona Cooperative.",
+       acargo:
+      "Newsletter for family caregivers with practical guides on public assistance, useful tools, and caregiver wellness.",
+    libriInGiro:
+      "Book-sharing platform for the Italian community in Barcelona. Browse and borrow books by neighbourhood.",
     hir3d: "Creation of an AI-powered interview simulator.",
     comunidadSolar:
       "Development of a web interface for a solar energy simulator.",
     starWars:
       "Web app with Register and Login. Fetching and displaying data from an external API.",
     studioSlow4: "Website prototype created entirely with HTML and Bootstrap.",
-    acargo:
-      "Newsletter for family caregivers with practical guides on public assistance, useful tools, and caregiver wellness.",
-    libriInGiro:
-      "Book-sharing platform for the Italian community in Barcelona. Browse and borrow books by neighbourhood.",
+ 
   },
   about: {
     p1Html:
