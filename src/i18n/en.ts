@@ -11,9 +11,9 @@ export const en = {
   hero: {
     profileAlt: "Profile photo of Fabrizio Contu",
     greeting: "Hey, I'm Fabrizio",
-    badge: "Available for work",
+    badge: "Available for projects",
     descriptionHtml:
-      'An Italian <span class="text-teal-600 dark:text-teal-400 font-semibold">FrontEnd developer</span> based in Barcelona. Currently working with <span class="text-teal-600 dark:text-teal-400 font-semibold">React</span>.',
+      '<span class="text-teal-600 dark:text-teal-400 font-semibold">Accessible, multilingual</span> frontend development for cooperatives, clubs and SMEs in Barcelona. <span class="text-teal-600 dark:text-teal-400 font-semibold">React/Next + headless WordPress</span>.',
     copyTitle: "Copy fab.contu@gmail.com",
     copyAriaLabel: "Copy email address",
     cvFile: "CV_EN.pdf",
