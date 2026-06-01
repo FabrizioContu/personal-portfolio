@@ -49,22 +49,98 @@ export const en = {
   // UI labels for the case study detail pages.
   caseStudy: {
     back: "Back to projects",
+    gallery: "Screenshots",
     problem: "The challenge",
     solution: "The solution",
+    metrics: "Key results",
     result: "The result",
     stack: "Stack",
+    galleryPlaceholder: "[ Screenshots of the site — add to /public/projects/case-studies/<slug>/ ]",
   },
   // Long-form content per project slug. TODO: replace [...] placeholders with real
-  // content, then flip `hasContent: true` in src/data/projects.ts to publish the page.
+  // content (never invent metrics), then flip `hasContent: true` in
+  // src/data/projects.ts to publish the page.
   caseStudies: {
-    poolift: { problem: "[...]", solution: "[...]", result: "[...]" },
-    "la-igualitaria": { problem: "[...]", solution: "[...]", result: "[...]" },
-    acargo: { problem: "[...]", solution: "[...]", result: "[...]" },
-    "libri-in-giro": { problem: "[...]", solution: "[...]", result: "[...]" },
-    hir3d: { problem: "[...]", solution: "[...]", result: "[...]" },
-    "comunidad-solar": { problem: "[...]", solution: "[...]", result: "[...]" },
-    "star-wars": { problem: "[...]", solution: "[...]", result: "[...]" },
-    "studio-slow4": { problem: "[...]", solution: "[...]", result: "[...]" },
+    poolift: {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+      ],
+    },
+    "la-igualitaria": {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+      ],
+    },
+    acargo: {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+      ],
+    },
+    "libri-in-giro": {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+      ],
+    },
+    hir3d: {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+      ],
+    },
+    "comunidad-solar": {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+      ],
+    },
+    "star-wars": {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+      ],
+    },
+    "studio-slow4": {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+        { value: "[data]", label: "[what it measures]" },
+      ],
+    },
   },
   about: {
     p1Html:

@@ -51,22 +51,98 @@ export const es: Translations = {
   // Etiquetas de UI para las páginas de detalle de case study.
   caseStudy: {
     back: "Volver a proyectos",
+    gallery: "Capturas",
     problem: "El desafío",
     solution: "La solución",
+    metrics: "Resultados clave",
     result: "El resultado",
     stack: "Stack",
+    galleryPlaceholder: "[ Capturas del sitio — agregar en /public/projects/case-studies/<slug>/ ]",
   },
   // Contenido por slug de proyecto. TODO: reemplazar los placeholders [...] con
-  // contenido real y luego poner `hasContent: true` en src/data/projects.ts para publicar.
+  // contenido real (nunca inventar métricas) y luego poner `hasContent: true` en
+  // src/data/projects.ts para publicar.
   caseStudies: {
-    poolift: { problem: "[...]", solution: "[...]", result: "[...]" },
-    "la-igualitaria": { problem: "[...]", solution: "[...]", result: "[...]" },
-    acargo: { problem: "[...]", solution: "[...]", result: "[...]" },
-    "libri-in-giro": { problem: "[...]", solution: "[...]", result: "[...]" },
-    hir3d: { problem: "[...]", solution: "[...]", result: "[...]" },
-    "comunidad-solar": { problem: "[...]", solution: "[...]", result: "[...]" },
-    "star-wars": { problem: "[...]", solution: "[...]", result: "[...]" },
-    "studio-slow4": { problem: "[...]", solution: "[...]", result: "[...]" },
+    poolift: {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+      ],
+    },
+    "la-igualitaria": {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+      ],
+    },
+    acargo: {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+      ],
+    },
+    "libri-in-giro": {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+      ],
+    },
+    hir3d: {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+      ],
+    },
+    "comunidad-solar": {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+      ],
+    },
+    "star-wars": {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+      ],
+    },
+    "studio-slow4": {
+      problem: "[...]",
+      solution: "[...]",
+      result: "[...]",
+      metrics: [
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+        { value: "[dato]", label: "[qué mide]" },
+      ],
+    },
   },
   about: {
     p1Html:

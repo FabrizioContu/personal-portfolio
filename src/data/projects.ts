@@ -43,6 +43,13 @@ export interface Project {
    * `caseStudies[slug]` placeholders are replaced with real content.
    */
   hasContent?: boolean;
+  /**
+   * Screenshots of the live site for the case study gallery (language-neutral).
+   * Drop the files in /public/projects/case-studies/<slug>/ and list them here,
+   * e.g. ["/projects/case-studies/poolift/home.webp"]. While empty/undefined the
+   * CaseStudy renders a placeholder box. TODO: add real screenshots.
+   */
+  gallery?: string[];
 }
 
 export const PROJECTS: Project[] = [

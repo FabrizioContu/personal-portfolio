@@ -15,15 +15,10 @@ const { lang, project } = Astro.props;
 const t = useTranslations(lang);
 const labels = t.caseStudy;
 const content = t.caseStudies[project.slug as keyof typeof t.caseStudies];
-
-const sections = [
-  { heading: labels.problem, body: content.problem },
-  { heading: labels.solution, body: content.solution },
-  { heading: labels.result, body: content.result },
-];
+const gallery = project.gallery ?? [];
 ---
 
-<article class="flex flex-col gap-y-8">
+<article class="flex flex-col gap-y-10">
   <a
     href={`/${lang}/#projects`}
     class="text-sm text-teal-600 dark:text-teal-400 hover:underline w-fit"
@@ -45,16 +40,68 @@ const sections = [
     </ul>
   </header>
 
-  {
-    sections.map((section) => (
-      <section class="flex flex-col gap-y-2">
-        <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-300">
-          {section.heading}
-        </h2>
-        <p class="text-gray-700 dark:text-gray-400">{section.body}</p>
-      </section>
-    ))
-  }
+  {/* Gallery — screenshots of the live site. Placeholder until real images exist. */}
+  <section aria-label={labels.gallery}>
+    {gallery.length > 0 ? (
+      <div class="grid gap-4 sm:grid-cols-2">
+        {gallery.map((src) => (
+          <img
+            src={src}
+            alt=""
+            loading="lazy"
+            class="w-full rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm"
+          />
+        ))}
+      </div>
+    ) : (
+      <div class="flex items-center justify-center rounded-xl border border-dashed border-gray-300 dark:border-gray-600 bg-white/40 dark:bg-gray-800/30 p-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        {labels.galleryPlaceholder}
+      </div>
+    )}
+  </section>
+
+  <section class="flex flex-col gap-y-2">
+    <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-300">
+      {labels.problem}
+    </h2>
+    <p class="text-gray-700 dark:text-gray-400">{content.problem}</p>
+  </section>
+
+  <section class="flex flex-col gap-y-2">
+    <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-300">
+      {labels.solution}
+    </h2>
+    <p class="text-gray-700 dark:text-gray-400">{content.solution}</p>
+  </section>
+
+  {/* Metrics — never invent these; placeholders until real data is available. */}
+  {content.metrics.length > 0 && (
+    <section class="flex flex-col gap-y-4">
+      <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-300">
+        {labels.metrics}
+      </h2>
+      <dl class="grid gap-4 sm:grid-cols-3">
+        {content.metrics.map((metric) => (
+          <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/50 p-6 text-center">
+            <dt class="sr-only">{metric.label}</dt>
+            <dd class="text-3xl font-bold text-teal-600 dark:text-teal-400">
+              {metric.value}
+            </dd>
+            <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+              {metric.label}
+            </p>
+          </div>
+        ))}
+      </dl>
+    </section>
+  )}
+
+  <section class="flex flex-col gap-y-2">
+    <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-300">
+      {labels.result}
+    </h2>
+    <p class="text-gray-700 dark:text-gray-400">{content.result}</p>
+  </section>
 
   <footer class="flex flex-wrap items-end justify-start mt-4 gap-x-4 gap-y-2">
     {project.github && (
