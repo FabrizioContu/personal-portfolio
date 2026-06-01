@@ -24,6 +24,8 @@ export const en = {
   },
   sections: {
     projects: "Projects",
+    featuredWork: "Featured work",
+    otherProjects: "Other projects",
     aboutMe: "About me",
   },
   projects: {

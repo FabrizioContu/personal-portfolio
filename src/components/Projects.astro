@@ -76,6 +76,7 @@ const PROJECTS = [
     github: "https://github.com/FabrizioContu/poolift",
     image: "/projects/poolift.webp",
     tags: [TAGS.NEXTJS, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+    featured: true,
   },
   {
     title: "La Igualitaria",
@@ -84,6 +85,7 @@ const PROJECTS = [
     github: "https://github.com/FabrizioContu/igualitaria-nextjs",
     image: "/projects/igualitaria.webp",
     tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.WORDPRESS],
+    featured: true,
   },
   {
     title: "Acargo",
@@ -92,6 +94,7 @@ const PROJECTS = [
     github: "https://github.com/FabrizioContu/acargo",
     image: "/projects/acargo.webp",
     tags: [TAGS.PHP, TAGS.HTML],
+    featured: true,
   },
   {
     title: "Libri in Giro BCN",
@@ -100,6 +103,7 @@ const PROJECTS = [
     github: "https://github.com/FabrizioContu/libri-in-giro-bcn",
     image: "/projects/libriInGiro.webp",
     tags: [TAGS.NEXTJS, TAGS.TAILWIND],
+    featured: true,
   },
   {
     title: "Hir3d",
@@ -108,6 +112,7 @@ const PROJECTS = [
     github: "https://github.com/FabrizioContu/HIR3D",
     image: "/projects/hir3d.webp",
     tags: [TAGS.REACT, TAGS.TAILWIND],
+    featured: false,
   },
   {
     title: "Comunidad Solar Poble Sec",
@@ -116,6 +121,7 @@ const PROJECTS = [
     github: "https://github.com/FabrizioContu/ComunidadPobleSec",
     image: "/projects/comunidadSolar.webp",
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.TYPESCRIPT],
+    featured: true,
   },
   {
     title: "Star Wars",
@@ -124,6 +130,7 @@ const PROJECTS = [
     github: "https://github.com/FabrizioContu/STAR-WARS",
     image: "/projects/starWars.webp",
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+    featured: false,
   },
   {
     title: "Studio Slow4",
@@ -132,63 +139,78 @@ const PROJECTS = [
     github: "",
     image: "/projects/studioSlow4.webp",
     tags: [TAGS.HTML, TAGS.BOOTSTRAP],
+    featured: false,
   },
+];
+
+const GROUPS = [
+  { heading: t.sections.featuredWork, items: PROJECTS.filter((p) => p.featured) },
+  { heading: t.sections.otherProjects, items: PROJECTS.filter((p) => !p.featured) },
 ];
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="flex flex-col gap-y-12">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex rounded-md bg-white/80 p-3 dark:bg-gray-800/50 shadow-sm flex-col-reverse space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt=""
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
-              src={image}
-            />
-          </div>
-        </div>
+    GROUPS.map((group) => (
+      <section class="flex flex-col gap-y-8">
+        <h3 class="text-xl font-semibold text-gray-600 dark:text-gray-400">
+          {group.heading}
+        </h3>
+        <div class="flex flex-col gap-y-16">
+          {group.items.map(({ image, title, description, tags, link, github }) => (
+            <article class="flex rounded-md bg-white/80 p-3 dark:bg-gray-800/50 shadow-sm flex-col-reverse space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+              <div class="w-full md:w-1/2">
+                <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                  <img
+                    alt=""
+                    class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                    loading="lazy"
+                    src={image}
+                  />
+                </div>
+              </div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-semibold text-gray-700 dark:text-gray-300">
-            {title}
-          </h3>
-          <div class="flex flex-wrap my-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex justify-center items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
+              <div class="w-full md:w-1/2 md:max-w-lg">
+                <h4 class="text-2xl font-semibold text-gray-700 dark:text-gray-300">
+                  {title}
+                </h4>
+                <div class="flex flex-wrap my-2">
+                  <ul class="flex flex-row mb-2 gap-x-2">
+                    {tags.map((tag) => (
+                      <li>
+                        <span
+                          class={`flex justify-center items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                        >
+                          <tag.icon class="size-4" />
+                          {tag.name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
 
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
-            </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GithubIcon class="size-6" />
-                  {t.projects.viewCode}
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  {t.projects.visitSite}
-                </LinkButton>
-              )}
-            </footer>
-          </div>
+                  <div class="mt-2 text-gray-700 dark:text-gray-400">
+                    {description}
+                  </div>
+                  <footer class="flex items-end justify-start mt-4 gap-x-4">
+                    {github && (
+                      <LinkButton href={github}>
+                        <GithubIcon class="size-6" />
+                        {t.projects.viewCode}
+                      </LinkButton>
+                    )}
+                    {link && (
+                      <LinkButton href={link}>
+                        <Link class="size-4" />
+                        {t.projects.visitSite}
+                      </LinkButton>
+                    )}
+                  </footer>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
-      </article>
+      </section>
     ))
   }
 </div>

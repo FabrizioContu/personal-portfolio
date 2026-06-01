@@ -26,6 +26,8 @@ export const es: Translations = {
   },
   sections: {
     projects: "Proyectos",
+    featuredWork: "Trabajos destacados",
+    otherProjects: "Otros proyectos",
     aboutMe: "Sobre mí",
   },
   projects: {
