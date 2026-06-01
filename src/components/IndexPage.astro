@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import SectionContainer from "./SectionContainer.astro";
 import ContactForm from "./ContactForm.astro";
 import Projects from "./Projects.astro";
+import Testimonials from "./Testimonials.astro";
 import AboutMe from "./AboutMe.astro";
 import GitHubIcon from "./icons/github.astro";
 import LinkedinIcon from "./icons/linkedin.astro";
@@ -138,6 +139,13 @@ const t = useTranslations(lang);
         {t.sections.projects}
       </h2>
       <Projects lang={lang} />
+    </SectionContainer>
+
+    <SectionContainer id="testimonials" aria-label="testimonials">
+      <h2 class="text-3xl font-semibold mb-6">
+        {t.sections.testimonials}
+      </h2>
+      <Testimonials />
     </SectionContainer>
 
     <SectionContainer id="contact" aria-label="contact">

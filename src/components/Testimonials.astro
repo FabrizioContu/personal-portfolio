@@ -1,0 +1,26 @@
+---
+import { TESTIMONIALS } from "../data/testimonials";
+
+// No `lang` prop: testimonials are quoted in their original language, and the
+// section heading is rendered by the parent (IndexPage).
+---
+
+<div class="grid gap-6 md:grid-cols-3">
+  {
+    TESTIMONIALS.map((item) => (
+      <figure class="flex flex-col justify-between rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/50 p-6 shadow-sm">
+        <blockquote class="text-gray-700 dark:text-gray-300">
+          “{item.text}”
+        </blockquote>
+        <figcaption class="mt-4">
+          <span class="block font-semibold text-gray-800 dark:text-gray-200">
+            {item.name}
+          </span>
+          <span class="block text-sm text-gray-500 dark:text-gray-400">
+            {item.role}
+          </span>
+        </figcaption>
+      </figure>
+    ))
+  }
+</div>
