@@ -7,9 +7,20 @@ import type { Lang } from "../i18n/utils";
 interface Props {
   title: string;
   lang: Lang;
+  description?: string;
+  image?: string;
 }
 
-const { title, lang } = Astro.props;
+const SITE = "https://fabriziocontu.dev";
+const { title, lang, description = "", image } = Astro.props;
+
+// Absolute URLs for canonical / hreflang — works for home and case study routes.
+const path = Astro.url.pathname.replace(/^\/(en|es)/, "");
+const enHref = `${SITE}/en${path}`;
+const esHref = `${SITE}/es${path}`;
+const canonical = lang === "en" ? enHref : esHref;
+// TODO: crear OG image branded 1200×630 en /public/og-image.png y usarla por defecto.
+const ogImage = image ?? `${SITE}/me.webp`;
 ---
 
 <!doctype html>
@@ -20,22 +31,28 @@ const { title, lang } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <meta name="description" content="" />
+    <meta name="description" content={description} />
+
+    <!-- Canonical + hreflang -->
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="alternate" hreflang="es" href={esHref} />
+    <link rel="alternate" hreflang="x-default" href={enHref} />
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://fabriziocontu.dev/" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="fabriziocontu.dev" />
-    <meta property="twitter:url" content="https://fabriziocontu.dev/" />
+    <meta property="twitter:url" content={canonical} />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
   </head>
   <body class="relative text-black dark:text-white">
     <div
