@@ -1,3 +1,33 @@
 ---
-return Astro.redirect("/en/");
+// Static fallback for the site root. In production Netlify's edge redirect
+// (netlify.toml) handles "/" with Accept-Language detection before this page is
+// ever served. This covers local dev and any host without those redirect rules:
+// JS detects the browser language; with JS off, the <noscript> meta-refresh sends
+// the visitor to the English default.
 ---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Fabrizio Contu</title>
+    <link rel="canonical" href="https://fabriziocontu.dev/en/" />
+    <script is:inline>
+      const lang = (navigator.language || "en").toLowerCase();
+      const target =
+        lang.startsWith("es") || lang.startsWith("ca") ? "/es/" : "/en/";
+      window.location.replace(target);
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/en/" />
+    </noscript>
+  </head>
+  <body>
+    <noscript>
+      <p>
+        Redirecting… <a href="/en/">English</a> · <a href="/es/">Español</a>
+      </p>
+    </noscript>
+  </body>
+</html>
