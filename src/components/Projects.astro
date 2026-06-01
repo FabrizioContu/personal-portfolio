@@ -1,16 +1,9 @@
 ---
-import ReactIcon from "./icons/react.astro";
-import NextjsIcon from "./icons/nextjs.astro";
-import WordpressIcon from "./icons/wordpress.astro";
-import TailwindIcon from "./icons/tailwind.astro";
-import TypescriptIcon from "./icons/typescript.astro";
 import GithubIcon from "./icons/github.astro";
 import Link from "./icons/link.astro";
 import LinkButton from "./LinkButton.astro";
-import HtmlIcon from "./icons/html.astro";
-import BootstrapIcon from "./icons/bootstrap.astro";
-import AstroIcon from "./icons/astro.astro";
-import PhpIcon from "./icons/php.astro";
+import Tag from "./Tag.astro";
+import { PROJECTS } from "../data/projects";
 import { useTranslations, type Lang } from "../i18n/utils";
 
 interface Props {
@@ -19,129 +12,6 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-
-const TAGS = {
-  REACT: {
-    name: "React.js",
-    class: "bg-black text-[#32e0f4]",
-    icon: ReactIcon,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: TailwindIcon,
-  },
-  TYPESCRIPT: {
-    name: "TypeScript",
-    class: "bg-[#1976D2] text-white",
-    icon: TypescriptIcon,
-  },
-  BOOTSTRAP: {
-    name: "Bootstrap",
-    class: "bg-[#8A2BE2] text-white",
-    icon: BootstrapIcon,
-  },
-  HTML: {
-    name: "HTML5",
-    class: "bg-[#ff5733] text-white",
-    icon: HtmlIcon,
-  },
-  ASTRO: {
-    name: "astro",
-    class: "bg-[#101011] text-white",
-    icon: AstroIcon,
-  },
-  NEXTJS: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextjsIcon,
-  },
-  WORDPRESS: {
-    name: "WordPress",
-    class: "bg-[#21759b] text-white",
-    icon: WordpressIcon,
-  },
-  PHP: {
-    name: "PHP",
-    class: "bg-[#4F5B93] text-white",
-    icon: PhpIcon,
-  },
-};
-
-const PROJECTS = [
-  {
-    title: "Poolift",
-    description: t.projects.poolift,
-    link: "https://poolift.vercel.app/",
-    github: "https://github.com/FabrizioContu/poolift",
-    image: "/projects/poolift.webp",
-    tags: [TAGS.NEXTJS, TAGS.TYPESCRIPT, TAGS.TAILWIND],
-    featured: true,
-  },
-  {
-    title: "La Igualitaria",
-    description: t.projects.igualitaria,
-    link: "https://laigualitaria.coop",
-    github: "https://github.com/FabrizioContu/igualitaria-nextjs",
-    image: "/projects/igualitaria.webp",
-    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.WORDPRESS],
-    featured: true,
-  },
-  {
-    title: "Acargo",
-    description: t.projects.acargo,
-    link: "https://acargo.org/",
-    github: "https://github.com/FabrizioContu/acargo",
-    image: "/projects/acargo.webp",
-    tags: [TAGS.PHP, TAGS.HTML],
-    featured: true,
-  },
-  {
-    title: "Libri in Giro BCN",
-    description: t.projects.libriInGiro,
-    link: "https://libri-in-giro-bcn.vercel.app/",
-    github: "https://github.com/FabrizioContu/libri-in-giro-bcn",
-    image: "/projects/libriInGiro.webp",
-    tags: [TAGS.NEXTJS, TAGS.TAILWIND],
-    featured: true,
-  },
-  {
-    title: "Hir3d",
-    description: t.projects.hir3d,
-    link: "https://hir3d.netlify.app/",
-    github: "https://github.com/FabrizioContu/HIR3D",
-    image: "/projects/hir3d.webp",
-    tags: [TAGS.REACT, TAGS.TAILWIND],
-    featured: false,
-  },
-  {
-    title: "Comunidad Solar Poble Sec",
-    description: t.projects.comunidadSolar,
-    link: "https://comunidadenergeticapoblesec.netlify.app/",
-    github: "https://github.com/FabrizioContu/ComunidadPobleSec",
-    image: "/projects/comunidadSolar.webp",
-    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.TYPESCRIPT],
-    featured: true,
-  },
-  {
-    title: "Star Wars",
-    description: t.projects.starWars,
-    link: "https://sprint-7-fabco.vercel.app/",
-    github: "https://github.com/FabrizioContu/STAR-WARS",
-    image: "/projects/starWars.webp",
-    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
-    featured: false,
-  },
-  {
-    title: "Studio Slow4",
-    description: t.projects.studioSlow4,
-    link: "https://678bb070733ca481fbf8392f--tiny-stroopwafel-34e9e2.netlify.app/",
-    github: "",
-    image: "/projects/studioSlow4.webp",
-    tags: [TAGS.HTML, TAGS.BOOTSTRAP],
-    featured: false,
-  },
-];
 
 const GROUPS = [
   { heading: t.sections.featuredWork, items: PROJECTS.filter((p) => p.featured) },
@@ -157,7 +27,7 @@ const GROUPS = [
           {group.heading}
         </h3>
         <div class="flex flex-col gap-y-16">
-          {group.items.map(({ image, title, description, tags, link, github }) => (
+          {group.items.map(({ image, title, descriptionKey, tags, link, github, slug, hasContent }) => (
             <article class="flex rounded-md bg-white/80 p-3 dark:bg-gray-800/50 shadow-sm flex-col-reverse space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
               <div class="w-full md:w-1/2">
                 <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -178,20 +48,15 @@ const GROUPS = [
                   <ul class="flex flex-row mb-2 gap-x-2">
                     {tags.map((tag) => (
                       <li>
-                        <span
-                          class={`flex justify-center items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                        >
-                          <tag.icon class="size-4" />
-                          {tag.name}
-                        </span>
+                        <Tag tag={tag} />
                       </li>
                     ))}
                   </ul>
 
                   <div class="mt-2 text-gray-700 dark:text-gray-400">
-                    {description}
+                    {t.projects[descriptionKey]}
                   </div>
-                  <footer class="flex items-end justify-start mt-4 gap-x-4">
+                  <footer class="flex flex-wrap items-end justify-start mt-4 gap-x-4 gap-y-2">
                     {github && (
                       <LinkButton href={github}>
                         <GithubIcon class="size-6" />
@@ -203,6 +68,15 @@ const GROUPS = [
                         <Link class="size-4" />
                         {t.projects.visitSite}
                       </LinkButton>
+                    )}
+                    {hasContent && (
+                      <a
+                        href={`/${lang}/projects/${slug}`}
+                        class="inline-flex bg-teal-500 text-white items-center justify-center gap-2 px-3 py-2 text-base transition hover:bg-teal-600 dark:hover:bg-teal-400 max-w-fit rounded-xl focus:outline-none focus-visible:ring-1 focus-visible:ring-teal-600 dark:focus-visible:ring-white"
+                      >
+                        <Link class="size-4" />
+                        {t.projects.viewCase}
+                      </a>
                     )}
                   </footer>
                 </div>

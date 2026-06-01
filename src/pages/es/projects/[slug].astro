@@ -1,0 +1,29 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import SectionContainer from "../../../components/SectionContainer.astro";
+import CaseStudy from "../../../components/CaseStudy.astro";
+import { PROJECTS } from "../../../data/projects";
+import { useTranslations } from "../../../i18n/utils";
+
+// Solo los proyectos con contenido real de case study generan página. Mientras
+// todos tengan hasContent: false, esto devuelve [] y no se construye ninguna página.
+export function getStaticPaths() {
+  return PROJECTS.filter((p) => p.hasContent).map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const lang = "es";
+const t = useTranslations(lang);
+const title = `${project.title} — Fabrizio Contu`;
+---
+
+<Layout title={title} lang={lang} description={t.projects[project.descriptionKey]}>
+  <main class="px-4 pt-20">
+    <SectionContainer id="case-study">
+      <CaseStudy lang={lang} project={project} />
+    </SectionContainer>
+  </main>
+</Layout>

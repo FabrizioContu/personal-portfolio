@@ -1,0 +1,38 @@
+---
+import ReactIcon from "./icons/react.astro";
+import NextjsIcon from "./icons/nextjs.astro";
+import WordpressIcon from "./icons/wordpress.astro";
+import TailwindIcon from "./icons/tailwind.astro";
+import TypescriptIcon from "./icons/typescript.astro";
+import HtmlIcon from "./icons/html.astro";
+import BootstrapIcon from "./icons/bootstrap.astro";
+import AstroIcon from "./icons/astro.astro";
+import PhpIcon from "./icons/php.astro";
+import type { TagKey } from "../data/projects";
+
+const TAGS = {
+  REACT: { name: "React.js", class: "bg-black text-[#32e0f4]", icon: ReactIcon },
+  TAILWIND: { name: "Tailwind CSS", class: "bg-[#003159] text-white", icon: TailwindIcon },
+  TYPESCRIPT: { name: "TypeScript", class: "bg-[#1976D2] text-white", icon: TypescriptIcon },
+  BOOTSTRAP: { name: "Bootstrap", class: "bg-[#8A2BE2] text-white", icon: BootstrapIcon },
+  HTML: { name: "HTML5", class: "bg-[#ff5733] text-white", icon: HtmlIcon },
+  ASTRO: { name: "astro", class: "bg-[#101011] text-white", icon: AstroIcon },
+  NEXTJS: { name: "Next.js", class: "bg-black text-white", icon: NextjsIcon },
+  WORDPRESS: { name: "WordPress", class: "bg-[#21759b] text-white", icon: WordpressIcon },
+  PHP: { name: "PHP", class: "bg-[#4F5B93] text-white", icon: PhpIcon },
+} satisfies Record<TagKey, { name: string; class: string; icon: unknown }>;
+
+interface Props {
+  tag: TagKey;
+}
+
+const { tag } = Astro.props;
+const { name, class: badgeClass, icon: Icon } = TAGS[tag];
+---
+
+<span
+  class={`flex justify-center items-center gap-x-2 rounded-full text-xs ${badgeClass} py-1 px-2`}
+>
+  <Icon class="size-4" />
+  {name}
+</span>

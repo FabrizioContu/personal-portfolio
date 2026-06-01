@@ -28,11 +28,13 @@ export const es: Translations = {
     projects: "Proyectos",
     featuredWork: "Trabajos destacados",
     otherProjects: "Otros proyectos",
+    testimonials: "Testimonios",
     aboutMe: "Sobre mí",
   },
   projects: {
     viewCode: "Ver código",
     visitSite: "Ir a sitio web",
+    viewCase: "Ver caso",
     poolift: "Aplicación web para organizar regalos de cumpleaños en grupo.",
     igualitaria: "Creación de una página web para una Cooperativa de Barcelona.",
       acargo:
@@ -45,7 +47,26 @@ export const es: Translations = {
     starWars:
       "Aplicación web con Registro y Login. Consumo y visualización de los datos de una API externa.",
     studioSlow4: "Prototipo Website creado integralmente con Html y Bootstrap.",
-  
+  },
+  // Etiquetas de UI para las páginas de detalle de case study.
+  caseStudy: {
+    back: "Volver a proyectos",
+    problem: "El desafío",
+    solution: "La solución",
+    result: "El resultado",
+    stack: "Stack",
+  },
+  // Contenido por slug de proyecto. TODO: reemplazar los placeholders [...] con
+  // contenido real y luego poner `hasContent: true` en src/data/projects.ts para publicar.
+  caseStudies: {
+    poolift: { problem: "[...]", solution: "[...]", result: "[...]" },
+    "la-igualitaria": { problem: "[...]", solution: "[...]", result: "[...]" },
+    acargo: { problem: "[...]", solution: "[...]", result: "[...]" },
+    "libri-in-giro": { problem: "[...]", solution: "[...]", result: "[...]" },
+    hir3d: { problem: "[...]", solution: "[...]", result: "[...]" },
+    "comunidad-solar": { problem: "[...]", solution: "[...]", result: "[...]" },
+    "star-wars": { problem: "[...]", solution: "[...]", result: "[...]" },
+    "studio-slow4": { problem: "[...]", solution: "[...]", result: "[...]" },
   },
   about: {
     p1Html:

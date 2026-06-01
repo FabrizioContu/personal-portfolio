@@ -26,11 +26,13 @@ export const en = {
     projects: "Projects",
     featuredWork: "Featured work",
     otherProjects: "Other projects",
+    testimonials: "Testimonials",
     aboutMe: "About me",
   },
   projects: {
     viewCode: "View code",
     visitSite: "Go to website",
+    viewCase: "View case",
     poolift: "Web app for organizing group birthday gifts.",
     igualitaria: "Creation of a website for a Barcelona Cooperative.",
        acargo:
@@ -43,7 +45,26 @@ export const en = {
     starWars:
       "Web app with Register and Login. Fetching and displaying data from an external API.",
     studioSlow4: "Website prototype created entirely with HTML and Bootstrap.",
- 
+  },
+  // UI labels for the case study detail pages.
+  caseStudy: {
+    back: "Back to projects",
+    problem: "The challenge",
+    solution: "The solution",
+    result: "The result",
+    stack: "Stack",
+  },
+  // Long-form content per project slug. TODO: replace [...] placeholders with real
+  // content, then flip `hasContent: true` in src/data/projects.ts to publish the page.
+  caseStudies: {
+    poolift: { problem: "[...]", solution: "[...]", result: "[...]" },
+    "la-igualitaria": { problem: "[...]", solution: "[...]", result: "[...]" },
+    acargo: { problem: "[...]", solution: "[...]", result: "[...]" },
+    "libri-in-giro": { problem: "[...]", solution: "[...]", result: "[...]" },
+    hir3d: { problem: "[...]", solution: "[...]", result: "[...]" },
+    "comunidad-solar": { problem: "[...]", solution: "[...]", result: "[...]" },
+    "star-wars": { problem: "[...]", solution: "[...]", result: "[...]" },
+    "studio-slow4": { problem: "[...]", solution: "[...]", result: "[...]" },
   },
   about: {
     p1Html:
