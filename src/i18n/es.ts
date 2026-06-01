@@ -2,7 +2,9 @@ import type { Translations } from "./en";
 
 export const es: Translations = {
   lang: "es",
-  title: "Porfolio de Fabrizio Contu - Programador y Desarrollador FrontEnd",
+  title: "Portfolio de Fabrizio Contu - Programador y Desarrollador FrontEnd",
+  description:
+    "Desarrollo frontend accesible y multilingüe — React/Next y WordPress headless — para cooperativas, clubes y pymes en Barcelona.",
   nav: {
     projects: "Proyectos",
     aboutMe: "Sobre mí",

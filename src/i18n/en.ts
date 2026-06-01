@@ -1,6 +1,8 @@
 export const en = {
   lang: "en",
   title: "Portfolio by Fabrizio Contu - FrontEnd Developer",
+  description:
+    "Accessible, multilingual frontend development — React/Next & headless WordPress — for cooperatives, clubs and SMEs in Barcelona.",
   nav: {
     projects: "Projects",
     aboutMe: "About me",
