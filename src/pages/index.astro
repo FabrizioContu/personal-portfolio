@@ -1,32 +1,29 @@
 ---
 // Static fallback for the site root. In production Netlify's edge redirect
-// (netlify.toml) handles "/" with Accept-Language detection before this page is
-// ever served. This covers local dev and any host without those redirect rules:
-// JS detects the browser language; with JS off, the <noscript> meta-refresh sends
-// the visitor to the English default.
+// (netlify.toml) sends "/" to /es/ before this page is ever served. This covers
+// local dev and any host without those redirect rules: the visitor is sent to
+// the Spanish default, with a <noscript> meta-refresh for JS-off clients.
+// English is reachable from the navbar switcher or via the /en/ URL directly.
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Fabrizio Contu</title>
-    <link rel="canonical" href="https://fabriziocontu.dev/en/" />
+    <link rel="canonical" href="https://fabriziocontu.dev/es/" />
     <script is:inline>
-      const lang = (navigator.language || "en").toLowerCase();
-      const target =
-        lang.startsWith("es") || lang.startsWith("ca") ? "/es/" : "/en/";
-      window.location.replace(target);
+      window.location.replace("/es/");
     </script>
     <noscript>
-      <meta http-equiv="refresh" content="0; url=/en/" />
+      <meta http-equiv="refresh" content="0; url=/es/" />
     </noscript>
   </head>
   <body>
     <noscript>
       <p>
-        Redirecting… <a href="/en/">English</a> · <a href="/es/">Español</a>
+        Redirigiendo… <a href="/es/">Español</a> · <a href="/en/">English</a>
       </p>
     </noscript>
   </body>

@@ -1,15 +1,8 @@
-# Language-aware redirect for the site root, resolved at Netlify's edge using the
-# visitor's Accept-Language header. 302 (temporary) so browsers don't cache it
-# permanently the way a 301 would. Spanish AND Catalan visitors get /es/ (closer
-# than English for the Barcelona market); everyone else falls back to /en/.
-# Order matters: the language-conditioned rule must come before the catch-all.
+# Site root always resolves to the Spanish version. This is the default for the
+# Barcelona market; English is reachable via the navbar switcher or by sharing
+# the /en/ URL directly. 301 (permanent) consolidates SEO authority on /es/ now
+# that the root is a fixed, non-conditional default.
 [[redirects]]
   from = "/"
   to = "/es/"
-  status = 302
-  conditions = {Language = ["es", "ca"]}
-
-[[redirects]]
-  from = "/"
-  to = "/en/"
-  status = 302
+  status = 301
