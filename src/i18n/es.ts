@@ -144,13 +144,13 @@ export const es: Translations = {
       ],
     },
   },
-  about: {
-    p1Html:
-      '<span class="text-teal-600 dark:text-teal-400 font-mono">De WordPress a la programación</span>. Lo que comenzó como un interés por diseñar sitios web se transformó en un viaje por el mundo del desarrollo.',
-    p2Html:
-      'Mi objetivo es seguir desarrollándome como Front-End Developer, integrando mi <span class="text-teal-600 dark:text-teal-400 font-mono">pasión por el diseño y la accesibilidad web</span> con las últimas tecnologías como <span class="text-teal-600 dark:text-teal-400 font-mono">Astro y Next.js.</span>',
-    p3: "Aspiro a construir experiencias digitales inclusivas, sostenibles y dinámicas, trabajando con equipos comprometidos con la innovación y el impacto positivo.",
-  },
+ about: {
+  p1Html:
+    '<span class="text-teal-600 dark:text-teal-400 font-mono">De WordPress a la programación moderna</span>. Lo que empezó como pasión por diseñar webs se convirtió en el camino de construirlas bien: accesibles, rápidas y multilingües.',
+  p2Html:
+    'Hoy ayudo a <span class="text-teal-600 dark:text-teal-400 font-mono">cooperativas, clubes y pymes de Barcelona</span> a tener webs inclusivas y bilingües con <span class="text-teal-600 dark:text-teal-400 font-mono">React/Next y WordPress headless</span>.',
+  p3: "Me importan los sitios que funcionan para todo el mundo: accesibilidad según estándares, soporte multilingüe real y código que tu equipo pueda mantener.",
+},
   contact: {
     hasProject: "¿Tienes algún proyecto?",
     letWork: "Trabajemos juntos",

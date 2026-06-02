@@ -142,13 +142,13 @@ export const en = {
       ],
     },
   },
-  about: {
-    p1Html:
-      '<span class="text-teal-600 dark:text-teal-400 font-mono">From WordPress to programming</span>. What started as an interest in designing websites turned into a journey through the world of development.',
-    p2Html:
-      'My goal is to keep growing as a Front-End Developer, combining my <span class="text-teal-600 dark:text-teal-400 font-mono">passion for design and web accessibility</span> with the latest technologies like <span class="text-teal-600 dark:text-teal-400 font-mono">Astro and Next.js.</span>',
-    p3: "I aspire to build inclusive, sustainable, and dynamic digital experiences, working with teams committed to innovation and positive impact.",
-  },
+ about: {
+  p1Html:
+    '<span class="text-teal-600 dark:text-teal-400 font-mono">From WordPress to modern development</span>. What began as a passion for designing websites became a path into building them properly — accessible, fast, and multilingual.',
+  p2Html:
+    'Today I help <span class="text-teal-600 dark:text-teal-400 font-mono">cooperatives, clubs and SMEs in Barcelona</span> build inclusive, bilingual websites with <span class="text-teal-600 dark:text-teal-400 font-mono">React/Next and headless WordPress</span>.',
+  p3: "I care about sites that work for everyone: standards-compliant accessibility, real multilingual support, and code your team can maintain.",
+},
   contact: {
     hasProject: "Do you have a project?",
     letWork: "Let's work together",
