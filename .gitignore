@@ -4,6 +4,11 @@ dist/
 # generated types
 .astro/
 
+# playwright (a11y tests)
+test-results/
+playwright-report/
+.playwright/
+
 # dependencies
 node_modules/
 

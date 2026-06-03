@@ -10,16 +10,16 @@ const t = useTranslations(lang);
 ---
 
 <section
-  class="flex flex-col justify-center items-center gap-x-8 gap-y-4 md:flex-row"
+  class="flex flex-col justify-center items-center gap-x-10 gap-y-6 md:flex-row"
 >
-  <div>
+  <div class="text-ink-soft text-lg leading-relaxed">
     <p class="mb-4" set:html={t.about.p1Html} />
     <p class="mb-4" set:html={t.about.p2Html} />
-    <p class="mb-4">{t.about.p3}</p>
+    <p>{t.about.p3}</p>
   </div>
   <img
     src="/me.webp"
-    alt=""
-    class="full-size size-48 rounded-full dark:border-2 dark:border-teal-400"
+    alt={t.hero.profileAlt}
+    class="size-48 shrink-0 rounded-full border-2 border-terracotta object-cover shadow-soft"
   />
 </section>

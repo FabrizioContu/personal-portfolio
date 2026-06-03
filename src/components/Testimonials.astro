@@ -8,15 +8,15 @@ import { TESTIMONIALS } from "../data/testimonials";
 <div class="grid gap-6 md:grid-cols-3">
   {
     TESTIMONIALS.map((item) => (
-      <figure class="flex flex-col justify-between rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/50 p-6 shadow-sm">
-        <blockquote class="text-gray-700 dark:text-gray-300">
+      <figure class="flex flex-col justify-between rounded-card border border-line bg-cream-100 p-6 shadow-soft">
+        <blockquote class="text-ink-soft">
           “{item.text}”
         </blockquote>
         <figcaption class="mt-4">
-          <span class="block font-semibold text-gray-800 dark:text-gray-200">
+          <span class="block font-semibold text-ink">
             {item.name}
           </span>
-          <span class="block text-sm text-gray-500 dark:text-gray-400">
+          <span class="block text-sm text-ink-soft">
             {item.role}
           </span>
         </figcaption>
