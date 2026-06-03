@@ -1,5 +1,4 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro";
 import { useTranslations, type Lang } from "../i18n/utils";
 
 interface Props {
@@ -30,16 +29,16 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-4"
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-4 px-4"
 >
-  <span></span>
   <nav
-    class="flex px-8 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center border border-teal-400"
+    class="flex items-center gap-x-1 px-3 py-1.5 text-sm font-medium rounded-full
+    text-ink-soft border border-line bg-cream-100/80 shadow-soft backdrop-blur-md"
   >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-teal-400 dark:hover:text-teal-400"
+          class="relative block px-3 py-1.5 rounded-full transition-colors hover:text-terracotta-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-600"
           aria-label={link.label}
           href={link.url}
         >
@@ -48,34 +47,14 @@ const navItems = [
       ))
     }
 
-    <ThemeToggle />
+    <span class="mx-1 h-4 w-px bg-line" aria-hidden="true"></span>
+
     <a
       href={`/${alternateLang}/`}
-      class="relative block px-3 py-2 transition hover:text-teal-400 dark:hover:text-teal-400 font-semibold"
+      class="relative block px-3 py-1.5 rounded-full font-semibold text-ink transition-colors hover:text-terracotta-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-600"
       aria-label={`Switch to ${alternateLang === "en" ? "English" : "Spanish"}`}
     >
       {alternateLang.toUpperCase()}
     </a>
   </nav>
 </header>
-
-<style>
-  nav {
-    animation: nav-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
-  }
-
-  nav {
-    @apply dark:bg-gray-800/90 bg-white/90;
-  }
-
-  @keyframes nav-shadown {
-    0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
-    }
-    to {
-      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
-    }
-  }
-</style>

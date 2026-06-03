@@ -1,5 +1,5 @@
 ---
-import SocialPill from "./SocialPill.astro";
+import MailIcon from "./icons/mail.astro";
 import { useTranslations, type Lang } from "../i18n/utils";
 
 interface Props {
@@ -10,27 +10,21 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<div>
-  <div class="py-4">
-    <div class="gap-2 flex justify-between place-items-center">
-      <div class="flex flex-col gap-y-2">
-        <h1
-          class="text-lg sm:text-2xl md:text-3xl lg:text-4xl dark:text-white font-bold flex flex-row"
-        >
-          {t.contact.hasProject}
-        </h1>
-        <p class="dark:text-white text-sm md:text-lg ps-2">
-          {t.contact.letWork}
-        </p>
-      </div>
-
-      <SocialPill
-        href="mailto:fab.contu@gmail.com"
-        class="ml-4 px-4 py-2 text-white bg-teal-500 rounded-lg shadow hover:bg-teal-600 dark:hover:bg-teal-400 transition"
-        aria-label={t.contact.ariaLabel}
-      >
-        {t.contact.contactMe}
-      </SocialPill>
-    </div>
+<div
+  class="flex flex-col gap-6 rounded-card border border-line bg-cream-100 p-8 shadow-soft sm:flex-row sm:items-center sm:justify-between"
+>
+  <div class="flex flex-col gap-y-1">
+    <h2 class="font-display text-2xl md:text-3xl font-semibold text-ink">
+      {t.contact.hasProject}
+    </h2>
+    <p class="text-ink-soft">{t.contact.letWork}</p>
   </div>
+
+  <a
+    href="mailto:fab.contu@gmail.com"
+    aria-label={t.contact.ariaLabel}
+    class="inline-flex items-center gap-2 rounded-full bg-terracotta-600 px-6 py-3 text-cream-100 shadow-soft transition hover:bg-terracotta-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700 focus-visible:ring-offset-2 focus-visible:ring-offset-cream max-w-fit"
+  >
+    <MailIcon /> {t.contact.contactMe}
+  </a>
 </div>

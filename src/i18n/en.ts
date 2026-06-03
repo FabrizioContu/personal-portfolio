@@ -13,7 +13,7 @@ export const en = {
     greeting: "Hey, I'm Fabrizio",
     badge: "Available for projects",
     descriptionHtml:
-      '<span class="text-teal-600 dark:text-teal-400 font-semibold">Accessible, multilingual</span> frontend development for cooperatives, clubs and SMEs in Barcelona. <span class="text-teal-600 dark:text-teal-400 font-semibold">React/Next + headless WordPress</span>.',
+      '<span class="text-terracotta-700 font-semibold">Accessible, multilingual</span> frontend development for cooperatives, clubs and SMEs in Barcelona. <span class="text-terracotta-700 font-semibold">React/Next + headless WordPress</span>.',
     copyTitle: "Copy fab.contu@gmail.com",
     copyAriaLabel: "Copy email address",
     cvFile: "CV_EN.pdf",
@@ -144,9 +144,9 @@ export const en = {
   },
  about: {
   p1Html:
-    '<span class="text-teal-600 dark:text-teal-400 font-mono">From WordPress to modern development</span>. What began as a passion for designing websites became a path into building them properly — accessible, fast, and multilingual.',
+    '<span class="text-terracotta-700 font-semibold">From WordPress to modern development</span>. What began as a passion for designing websites became a path into building them properly — accessible, fast, and multilingual.',
   p2Html:
-    'Today I help <span class="text-teal-600 dark:text-teal-400 font-mono">cooperatives, clubs and SMEs in Barcelona</span> build inclusive, bilingual websites with <span class="text-teal-600 dark:text-teal-400 font-mono">React/Next and headless WordPress</span>.',
+    'Today I help <span class="text-terracotta-700 font-semibold">cooperatives, clubs and SMEs in Barcelona</span> build inclusive, bilingual websites with <span class="text-terracotta-700 font-semibold">React/Next and headless WordPress</span>.',
   p3: "I care about sites that work for everyone: standards-compliant accessibility, real multilingual support, and code your team can maintain.",
 },
   contact: {
@@ -158,7 +158,7 @@ export const en = {
   footer: {
     aboutMe: "About me",
     contact: "Contact",
-    inspired: "Inspired by Midudev",
+    inspired: "Fabrizio Contu",
   },
 };
 

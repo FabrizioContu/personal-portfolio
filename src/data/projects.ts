@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
     slug: "poolift",
     title: "Poolift",
     descriptionKey: "poolift",
-    link: "https://poolift.vercel.app/",
+    link: "https://poolift.app/",
     github: "https://github.com/FabrizioContu/poolift",
     image: "/projects/poolift.webp",
     tags: ["NEXTJS", "TYPESCRIPT", "TAILWIND"],
