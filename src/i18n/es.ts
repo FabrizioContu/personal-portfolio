@@ -15,7 +15,7 @@ export const es: Translations = {
     greeting: "Ciao, soy Fabrizio",
     badge: "Disponible para proyectos",
     descriptionHtml:
-      'Desarrollo frontend <span class="text-teal-600 dark:text-teal-400 font-semibold">accesible y multilingüe</span> para cooperativas, clubes y pymes de Barcelona. <span class="text-teal-600 dark:text-teal-400 font-semibold">React/Next + WordPress headless</span>.',
+      'Desarrollo frontend <span class="text-terracotta-700 font-semibold">accesible y multilingüe</span> para cooperativas, clubes y pymes de Barcelona. <span class="text-terracotta-700 font-semibold">React/Next + WordPress headless</span>.',
     copyTitle: "Copiar fab.contu@gmail.com",
     copyAriaLabel: "Copiar correo electrónico",
     cvFile: "CV_ES.pdf",
@@ -146,9 +146,9 @@ export const es: Translations = {
   },
  about: {
   p1Html:
-    '<span class="text-teal-600 dark:text-teal-400 font-mono">De WordPress a la programación moderna</span>. Lo que empezó como pasión por diseñar webs se convirtió en el camino de construirlas bien: accesibles, rápidas y multilingües.',
+    '<span class="text-terracotta-700 font-semibold">De WordPress a la programación moderna</span>. Lo que empezó como pasión por diseñar webs se convirtió en el camino de construirlas bien: accesibles, rápidas y multilingües.',
   p2Html:
-    'Hoy ayudo a <span class="text-teal-600 dark:text-teal-400 font-mono">cooperativas, clubes y pymes de Barcelona</span> a tener webs inclusivas y bilingües con <span class="text-teal-600 dark:text-teal-400 font-mono">React/Next y WordPress headless</span>.',
+    'Hoy ayudo a <span class="text-terracotta-700 font-semibold">cooperativas, clubes y pymes de Barcelona</span> a tener webs inclusivas y bilingües con <span class="text-terracotta-700 font-semibold">React/Next y WordPress headless</span>.',
   p3: "Me importan los sitios que funcionan para todo el mundo: accesibilidad según estándares, soporte multilingüe real y código que tu equipo pueda mantener.",
 },
   contact: {
@@ -160,6 +160,6 @@ export const es: Translations = {
   footer: {
     aboutMe: "Sobre mi",
     contact: "Contacto",
-    inspired: "Inspirado en Midudev",
+    inspired: "Fabrizio Contu",
   },
 };

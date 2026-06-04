@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import SectionContainer from "./SectionContainer.astro";
 import ContactForm from "./ContactForm.astro";
 import Projects from "./Projects.astro";
-import Testimonials from "./Testimonials.astro";
 import AboutMe from "./AboutMe.astro";
 import GitHubIcon from "./icons/github.astro";
 import LinkedinIcon from "./icons/linkedin.astro";
@@ -28,62 +27,61 @@ const t = useTranslations(lang);
   <main class="px-4">
     <SectionContainer id="top" aria-label="top" class="py-16 md:py-36">
       <img
-        class="rounded-full size-20 mb-5 mt-24 border-2 border-teal-400"
+        class="rounded-full size-20 mb-6 mt-24 border-2 border-terracotta object-cover"
         src={Profile.src}
         alt={t.hero.profileAlt}
       />
-      <h1
-        class="text-2xl md:text-3xl lg:text-4xl dark:text-white font-bold flex flex-row gap-x-4 pb-4"
-      >
-        {t.hero.greeting}
-        <a
-          href="#contact"
-          class="flex pt-1 items-center hover:scale-105 transition"
-        >
+
+      <div class="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+        <a href="#contact" class="transition hover:scale-105">
           <Badge>{t.hero.badge}</Badge>
         </a>
+      </div>
+
+      <h1
+        class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-ink pb-5"
+      >
+        {t.hero.greeting}
       </h1>
       <h2
-        class="opacity-80 text-xl md:text-2xl text-wrap"
+        class="max-w-2xl text-lg md:text-xl text-ink-soft text-balance"
         set:html={t.hero.descriptionHtml}
       />
 
-      <nav class="flex flex-wrap gap-y-5 gap-x-6 mt-8">
+      <nav class="flex flex-wrap items-center gap-y-4 gap-x-4 mt-9">
         <SocialPill href="https://github.com/FabrizioContu">
-          <GitHubIcon />
+          <GitHubIcon /> GitHub
         </SocialPill>
         <SocialPill
           href="https://www.linkedin.com/in/fabrizio-contu-9b179b12a/"
         >
-          <LinkedinIcon />
-        </SocialPill>
-        <SocialPill href="mailto:fab.contu@gmail.com">
-          <MailIcon /> fab.contu@gmail.com
+          <LinkedinIcon /> LinkedIn
         </SocialPill>
         <SocialPill
           onclick="copyEmail()"
           title={t.hero.copyTitle}
           aria-label={t.hero.copyAriaLabel}
         >
-          <CopyIcon />
+          <CopyIcon /> fab.contu@gmail.com
         </SocialPill>
 
-        <SocialPill
+        <a
           href={t.hero.cvFile}
           download="CV_Fabrizio_Contu.pdf"
-          class="ml-4 px-3 py-2 text-white bg-teal-500 rounded-lg shadow hover:bg-teal-600 dark:hover:bg-teal-400 transition"
+          class="inline-flex items-center gap-2 px-5 py-2.5 text-cream-100 bg-terracotta-600 rounded-full shadow-soft transition hover:bg-terracotta-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700 focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
           aria-label={t.hero.downloadAriaLabel}
         >
-          {t.hero.downloadCV}
-        </SocialPill>
+          <MailIcon /> {t.hero.downloadCV}
+        </a>
       </nav>
+
       <div
         id="email-alert"
         role="alert"
-        class="rounded-xl border border-gray-100 bg-white/90 p-4 hidden mt-6 mx-40"
+        class="hidden mt-6 max-w-md rounded-card border border-line bg-cream-100 p-4 shadow-soft"
       >
         <div class="flex items-start gap-4">
-          <span class="text-green-600">
+          <span class="text-olive-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -101,17 +99,18 @@ const t = useTranslations(lang);
           </span>
 
           <div class="flex-1">
-            <strong class="block font-medium text-gray-900">
+            <strong class="block font-medium text-ink">
               {t.hero.emailCopiedLabel}
-              <span class="text-teal-600 dark:text-teal-500 font-semibold"
+              <span class="text-terracotta-700 font-semibold"
                 >fab.contu@gmail.com
               </span>{t.hero.emailCopiedSuffix}
             </strong>
           </div>
 
           <button
-            class="text-gray-500 transition hover:text-gray-600"
+            class="text-ink-soft transition hover:text-ink"
             onclick="dismissAlert()"
+            aria-label="Dismiss"
           >
             <span class="sr-only">Dismiss popup</span>
 
@@ -134,30 +133,27 @@ const t = useTranslations(lang);
     </SectionContainer>
 
     <SectionContainer id="projects" aria-label="projects">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <CodeIcon class="size-7" />
+      <h2
+        class="font-display text-3xl md:text-4xl font-semibold mb-10 flex gap-x-3 items-center text-ink"
+      >
+        <CodeIcon class="size-7 text-terracotta-700" />
         {t.sections.projects}
       </h2>
       <Projects lang={lang} />
     </SectionContainer>
 
-    <!-- <SectionContainer id="testimonials" aria-label="testimonials">
-      <h2 class="text-3xl font-semibold mb-6">
-        {t.sections.testimonials}
-      </h2>
-      <Testimonials />
-    </SectionContainer> -->
-
-    <SectionContainer id="contact" aria-label="contact">
-      <ContactForm lang={lang} />
-    </SectionContainer>
-
     <SectionContainer id="about" aria-label="about">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <AboutIcon class="size-7" />
+      <h2
+        class="font-display text-3xl md:text-4xl font-semibold mb-8 flex gap-x-3 items-center text-ink"
+      >
+        <AboutIcon class="size-7 text-terracotta-700" />
         {t.sections.aboutMe}
       </h2>
       <AboutMe lang={lang} />
+    </SectionContainer>
+
+    <SectionContainer id="contact" aria-label="contact">
+      <ContactForm lang={lang} />
     </SectionContainer>
   </main>
 </Layout>
