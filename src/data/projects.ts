@@ -28,7 +28,8 @@ export interface Project {
   descriptionKey: ProjectDescriptionKey;
   link: string;
   github: string;
-  image: string;
+  /** Card screenshot. Only rendered for featured projects; optional otherwise. */
+  image?: string;
   tags: TagKey[];
   /**
    * Real client/professional work (true) vs bootcamp practice (false).
@@ -99,7 +100,6 @@ export const PROJECTS: Project[] = [
     descriptionKey: "hir3d",
     link: "https://hir3d.netlify.app/",
     github: "https://github.com/FabrizioContu/HIR3D",
-    image: "/projects/hir3d.webp",
     tags: ["REACT", "TAILWIND"],
     featured: false,
   },
@@ -109,9 +109,8 @@ export const PROJECTS: Project[] = [
     descriptionKey: "comunidadSolar",
     link: "https://comunidadenergeticapoblesec.netlify.app/",
     github: "https://github.com/FabrizioContu/ComunidadPobleSec",
-    image: "/projects/comunidadSolar.webp",
     tags: ["REACT", "TAILWIND", "TYPESCRIPT"],
-    featured: true,
+    featured: false,
   },
   {
     slug: "star-wars",
@@ -119,7 +118,6 @@ export const PROJECTS: Project[] = [
     descriptionKey: "starWars",
     link: "https://sprint-7-fabco.vercel.app/",
     github: "https://github.com/FabrizioContu/STAR-WARS",
-    image: "/projects/starWars.webp",
     tags: ["REACT", "TYPESCRIPT", "TAILWIND"],
     featured: false,
   },
@@ -129,7 +127,6 @@ export const PROJECTS: Project[] = [
     descriptionKey: "studioSlow4",
     link: "https://678bb070733ca481fbf8392f--tiny-stroopwafel-34e9e2.netlify.app/",
     github: "",
-    image: "/projects/studioSlow4.webp",
     tags: ["HTML", "BOOTSTRAP"],
     featured: false,
   },
