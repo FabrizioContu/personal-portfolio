@@ -1,0 +1,111 @@
+---
+import Link from "./icons/link.astro";
+import LinkButton from "./LinkButton.astro";
+import { WORK_EXPERIENCE } from "../data/workExperience";
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const featured = WORK_EXPERIENCE.filter((e) => e.featured);
+const others = WORK_EXPERIENCE.filter((e) => !e.featured);
+
+const pillClass =
+  "inline-flex items-center rounded-full border border-line bg-cream-200 text-ink-soft text-xs py-1 px-2.5";
+---
+
+<div class="flex flex-col gap-y-16">
+  <!-- Current & recent roles — editorial layout with index numbers -->
+  <section class="flex flex-col gap-y-12">
+    <h3 class="text-sm font-semibold uppercase tracking-widest text-ink-soft">
+      {t.sections.featuredExperience}
+    </h3>
+    <div class="flex flex-col gap-y-16">
+      {
+        featured.map(
+          (
+            { company, role, location, start, end, descriptionKey, tags, link },
+            i,
+          ) => (
+            <article class="group flex flex-col gap-6 md:flex-row md:gap-8">
+              <div class="w-full md:w-1/3">
+                <span class="font-display text-2xl text-terracotta-700/70">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p class="mt-1 text-sm font-medium text-ink-soft">
+                  {start} — {end ?? t.experience.present}
+                </p>
+                <p class="text-sm text-ink-soft">{location}</p>
+              </div>
+
+              <div class="w-full md:w-2/3 md:max-w-lg">
+                <h4 class="font-display text-2xl font-semibold text-ink">
+                  {role}
+                </h4>
+                <p class="text-terracotta-700 font-semibold">{company}</p>
+                <ul class="flex flex-row flex-wrap gap-2 my-3">
+                  {tags.map((tag) => (
+                    <li class={pillClass}>{tag}</li>
+                  ))}
+                </ul>
+
+                <p class="text-ink-soft">{t.experience[descriptionKey]}</p>
+
+                {link && (
+                  <footer class="flex flex-wrap items-end justify-start mt-5 gap-x-4 gap-y-2">
+                    <LinkButton href={link}>
+                      <Link class="size-4" />
+                      {t.experience.visitCompany}
+                    </LinkButton>
+                  </footer>
+                )}
+              </div>
+            </article>
+          ),
+        )
+      }
+    </div>
+  </section>
+
+  <!-- Earlier roles — compact list -->
+  <section class="flex flex-col gap-y-8">
+    <h3 class="text-sm font-semibold uppercase tracking-widest text-ink-soft">
+      {t.sections.otherExperience}
+    </h3>
+    <div class="grid gap-5 sm:grid-cols-2">
+      {
+        others.map(
+          ({ company, role, location, start, end, descriptionKey, tags, link }) => (
+            <article class="flex h-full flex-col rounded-card border border-line bg-cream-100 p-5 shadow-soft transition duration-300 hover:-translate-y-1">
+              <h4 class="font-display text-xl font-semibold text-ink">{role}</h4>
+              <p class="text-sm text-terracotta-700 font-semibold">{company}</p>
+              <p class="mt-1 text-xs text-ink-soft">
+                {start} — {end ?? t.experience.present} · {location}
+              </p>
+              <p class="mt-2 flex-1 text-sm text-ink-soft">
+                {t.experience[descriptionKey]}
+              </p>
+              <ul class="flex flex-row flex-wrap gap-2 mt-4">
+                {tags.map((tag) => (
+                  <li class={pillClass}>{tag}</li>
+                ))}
+              </ul>
+              {link && (
+                <footer class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                  <LinkButton href={link}>
+                    <Link class="size-4" />
+                    {t.experience.visitCompany}
+                  </LinkButton>
+                </footer>
+              )}
+            </article>
+          ),
+        )
+      }
+    </div>
+  </section>
+</div>

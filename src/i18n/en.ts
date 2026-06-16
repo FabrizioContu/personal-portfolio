@@ -4,6 +4,7 @@ export const en = {
   description:
     "Accessible, multilingual frontend development — React/Next & headless WordPress — for cooperatives, clubs and SMEs in Barcelona.",
   nav: {
+    experience: "Experience",
     projects: "Projects",
     aboutMe: "About me",
     contact: "Contact",
@@ -23,11 +24,26 @@ export const en = {
     emailCopiedSuffix: "copied",
   },
   sections: {
+    experience: "Work Experience",
+    featuredExperience: "Current & recent roles",
+    otherExperience: "Earlier roles",
     projects: "Projects",
     featuredWork: "Featured work",
     otherProjects: "Other projects",
     testimonials: "Testimonials",
     aboutMe: "About me",
+  },
+  experience: {
+    present: "Present",
+    visitCompany: "Visit company",
+    igualitaria:
+      "Development and maintenance of an accessible, scalable web app for a Barcelona cooperative. Features built with React and TypeScript on a decoupled frontend architecture, with continuous UX, performance and WCAG accessibility improvements.",
+    itAcademy:
+      "Code review, refactoring and new feature development on a collaborative frontend project in an Agile (Scrum) environment, applying SOLID principles, clean code, REST API integration and unit testing.",
+    cervezartesana:
+      "Management and evolution of the platform after migrating from Magento to WordPress. WooCommerce setup with 1,000+ products, dropshipping integration and SEO optimization that grew organic traffic.",
+    slow4:
+      "Co-founded a responsible, sustainable tourism platform. Led development and management on WordPress, coordinating product, content and technology.",
   },
   projects: {
     viewCode: "View code",
