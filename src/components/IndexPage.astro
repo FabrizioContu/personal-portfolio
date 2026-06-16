@@ -4,12 +4,14 @@ import Layout from "../layouts/Layout.astro";
 import SectionContainer from "./SectionContainer.astro";
 import ContactForm from "./ContactForm.astro";
 import Projects from "./Projects.astro";
+import WorkExperience from "./WorkExperience.astro";
 import AboutMe from "./AboutMe.astro";
 import GitHubIcon from "./icons/github.astro";
 import LinkedinIcon from "./icons/linkedin.astro";
 import MailIcon from "./icons/mail.astro";
 import SocialPill from "./SocialPill.astro";
 import CodeIcon from "./icons/code.astro";
+import BriefcaseIcon from "./icons/briefcase.astro";
 import CopyIcon from "./icons/copy.astro";
 import AboutIcon from "./icons/about.astro";
 import Profile from "../assets/Profile_.png";
@@ -130,6 +132,16 @@ const t = useTranslations(lang);
           </button>
         </div>
       </div>
+    </SectionContainer>
+
+    <SectionContainer id="experience" aria-label="experience">
+      <h2
+        class="font-display text-3xl md:text-4xl font-semibold mb-10 flex gap-x-3 items-center text-ink"
+      >
+        <BriefcaseIcon class="size-7 text-terracotta-700" />
+        {t.sections.experience}
+      </h2>
+      <WorkExperience lang={lang} />
     </SectionContainer>
 
     <SectionContainer id="projects" aria-label="projects">

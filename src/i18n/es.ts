@@ -6,6 +6,7 @@ export const es: Translations = {
   description:
     "Desarrollo frontend accesible y multilingüe — React/Next y WordPress headless — para cooperativas, clubes y pymes en Barcelona.",
   nav: {
+    experience: "Experiencia",
     projects: "Proyectos",
     aboutMe: "Sobre mí",
     contact: "Contacto",
@@ -25,11 +26,26 @@ export const es: Translations = {
     emailCopiedSuffix: "copiado",
   },
   sections: {
+    experience: "Experiencia Laboral",
+    featuredExperience: "Roles actuales y recientes",
+    otherExperience: "Roles anteriores",
     projects: "Proyectos",
     featuredWork: "Trabajos destacados",
     otherProjects: "Otros proyectos",
     testimonials: "Testimonios",
     aboutMe: "Sobre mí",
+  },
+  experience: {
+    present: "Actualidad",
+    visitCompany: "Visitar empresa",
+    igualitaria:
+      "Desarrollo y mantenimiento de una aplicación web accesible y escalable para una cooperativa de Barcelona. Funcionalidades con React y TypeScript sobre una arquitectura frontend desacoplada, con mejora continua de UX, rendimiento y accesibilidad WCAG.",
+    itAcademy:
+      "Revisión de código, refactorización y desarrollo de nuevas funcionalidades en un proyecto frontend colaborativo en entorno Agile (Scrum), aplicando principios SOLID, código limpio, integración con APIs REST y pruebas unitarias.",
+    cervezartesana:
+      "Gestión y evolución de la plataforma tras la migración de Magento a WordPress. Configuración de WooCommerce con más de 1.000 productos, integración de dropshipping y optimización SEO que incrementó el tráfico orgánico.",
+    slow4:
+      "Cofundador de una plataforma de turismo responsable y sostenible. Lideré el desarrollo y la gestión con WordPress, coordinando producto, contenido y tecnología.",
   },
   projects: {
     viewCode: "Ver código",
